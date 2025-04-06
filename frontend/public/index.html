@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="智能停车监控系统">
+
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="https://vjs.zencdn.net/8.15.0/video-js.min.css" as="style">
+  <link rel="preload" href="https://vjs.zencdn.net/8.15.0/video.min.js" as="script">
+
+  <!-- 主样式 -->
+  <link rel="stylesheet" href="https://vjs.zencdn.net/8.15.0/video-js.min.css">
+
+  <!-- 网站图标 -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+
+  <title>智能停车监控系统</title>
+</head>
+<body>
+  <!-- 根容器 -->
+  <div id="root"></div>
+
+  <!-- 视频播放器依赖 -->
+  <script src="https://vjs.zencdn.net/8.15.0/video.min.js"></script>
+
+  <!-- 性能监控（可选） -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>

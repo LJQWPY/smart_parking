@@ -1,0 +1,29 @@
+# 核心框架
+flask==2.3.3
+flask-jwt-extended==4.5.3
+python-dotenv==1.0.0
+
+# 计算机视觉
+opencv-python-headless==4.8.1.78  # 无GUI依赖版本
+ultralytics==8.0.231  # 最新YOLOv8版本
+
+# PyTorch（自动选择适配版本）
+torch==2.3.0+cu121 ; sys_platform == 'win32' and platform_machine == 'AMD64'
+torch==2.3.0 ; sys_platform != 'win32' or platform_machine != 'AMD64'
+
+# 数据处理
+numpy==1.26.2
+protobuf==4.25.1
+
+# 异步处理
+eventlet==0.33.3
+
+# 数据库
+sqlalchemy==2.0.25
+
+# 工具类
+requests==2.31.0
+python-multipart==0.0.9
+
+# Windows专用依赖
+pywin32==306 ; sys_platform == 'win32'
