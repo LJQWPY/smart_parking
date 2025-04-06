@@ -1,0 +1,49 @@
+/* 设置页面整体的字体样式 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 为页面头部添加阴影效果，增强层次感 */
+header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 为页面主体添加内边距，提高内容的可读性 */
+main {
+    padding: 20px;
+}
+
+/* 为登录容器添加过渡效果，当鼠标悬停时产生动画效果 */
+#loginContainer {
+    transition: all 0.3s ease;
+}
+
+/* 当鼠标悬停在登录容器上时，放大容器并添加阴影效果 */
+#loginContainer:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 设置视频监控面板的背景颜色、圆角和阴影效果，使其更加美观 */
+#videoPanel {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* 为视频流显示区域添加边框，增强视觉效果 */
+#videoFeed {
+    border: 1px solid #ddd;
+}
+
+/* 为退出登录按钮添加过渡效果，当鼠标悬停时产生动画效果 */
+#logoutButton {
+    transition: all 0.3s ease;
+}
+
+/* 当鼠标悬停在退出登录按钮上时，放大按钮 */
+#logoutButton:hover {
+    transform: scale(1.05);
+}
+    

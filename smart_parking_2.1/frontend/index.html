@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能停车监控系统</title>
+    <!-- 引入Tailwind CSS浏览器版本，用于快速构建响应式UI -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <!-- 引入Font Awesome图标库，用于添加图标 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <!-- 引入自定义 CSS 文件，用于添加额外的样式 -->
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- 页面头部，显示系统名称 -->
+    <header class="bg-blue-500 text-white p-4 text-center">
+        <h1 class="text-2xl font-bold">智能停车监控系统</h1>
+    </header>
+    <!-- 页面主体，包含登录容器和视频监控面板 -->
+    <main class="flex-grow flex justify-center items-center">
+        <!-- 登录容器，包含登录表单和错误信息提示 -->
+        <div id="loginContainer" class="bg-white p-8 rounded shadow-md w-96">
+            <h2 class="text-2xl font-bold mb-4">登录</h2>
+            <!-- 登录表单，包含用户名和密码输入框以及登录按钮 -->
+            <form id="loginForm" onsubmit="return validateLoginForm()">
+                <div class="mb-4">
+                    <label for="username" class="block text-gray-700 font-bold mb-2">用户名</label>
+                    <input type="text" id="username" class="border border-gray-400 p-2 w-full" required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-700 font-bold mb-2">密码</label>
+                    <input type="password" id="password" class="border border-gray-400 p-2 w-full" required>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-full">登录</button>
+            </form>
+            <!-- 错误信息提示框，用于显示登录失败的错误信息 -->
+            <div id="errorMessage" class="text-red-500 mt-2 hidden"></div>
+            <button id="goToRegister" class="bg-green-500 text-white p-2 rounded hover:bg-green-600 w-full mt-4">注册</button>
+        </div>
+        <!-- 注册容器，包含注册表单和错误信息提示 -->
+        <div id="registerContainer" class="hidden bg-white p-8 rounded shadow-md w-96">
+            <h2 class="text-2xl font-bold mb-4">注册</h2>
+            <!-- 注册表单，包含用户名和密码输入框以及注册按钮 -->
+            <form id="registerForm" onsubmit="return validateRegisterForm()">
+                <div class="mb-4">
+                    <label for="regUsername" class="block text-gray-700 font-bold mb-2">用户名</label>
+                    <input type="text" id="regUsername" class="border border-gray-400 p-2 w-full" required>
+                </div>
+                <div class="mb-4">
+                    <label for="regPassword" class="block text-gray-700 font-bold mb-2">密码</label>
+                    <input type="password" id="regPassword" class="border border-gray-400 p-2 w-full" required>
+                </div>
+                <button type="submit" class="bg-green-500 text-white p-2 rounded hover:bg-green-600 w-full">注册</button>
+            </form>
+            <!-- 错误信息提示框，用于显示注册失败的错误信息 -->
+            <div id="regErrorMessage" class="text-red-500 mt-2 hidden"></div>
+            <button id="goToLogin" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-full mt-4">返回登录</button>
+        </div>
+        <!-- 视频监控面板，包含摄像头开关按钮和退出登录按钮 -->
+        <div id="videoPanel" class="hidden p-8 w-full max-w-4xl">
+            <h2 class="text-2xl font-bold mb-4">视频监控</h2>
+            <!-- 摄像头开关按钮容器 -->
+            <div id="cameraList"></div>
+            <!-- 退出登录按钮 -->
+            <button id="logoutButton" class="bg-red-500 text-white p-2 rounded hover:bg-red-600 mt-4">退出登录</button>
+            <!-- 视频流显示元素 -->
+            <img id="videoFeed" src="" alt="Video Feed" class="mt-4">
+        </div>
+    </main>
+    <!-- 页面底部，显示版权信息 -->
+    <footer class="bg-gray-200 p-4 text-center text-sm">
+        &copy; 2025 智能停车监控系统. 保留所有权利.
+    </footer>
+
+    <!-- 引入自定义 JavaScript 文件，用于添加交互逻辑 -->
+    <script src="/static/js/main.js"></script>
+    <script>
+        function validateLoginForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username === '' || password === '') {
+                alert('用户名和密码不能为空');
+                return false;
+            }
+            return true;
+        }
+
+        function validateRegisterForm() {
+            const regUsername = document.getElementById('regUsername').value;
+            const regPassword = document.getElementById('regPassword').value;
+            if (regUsername === '' || regPassword === '') {
+                alert('用户名和密码不能为空');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
+    
